@@ -1,16 +1,19 @@
 # c1c
 
-A compiler for `.c1` files - just like regular C files, but array indexes start at 1.
+A compiler for `.c1` files - they're just regular C files, except array indexes start at 1.
 
 ## Motivation
 
-Did you ever feel the need to torture a software engineer?
+Do you ever feel the need to torture a software engineer?
 The c1 programming language is the perfect fit for you!
 
 ## How to install
 
 Just download c1c and add it to your path.
 There's a linux executable in the repo, or you can build the compiler from source (`c1c.c`).
+
+**Note**:
+You need to have `gcc` installed for the compiler to work.
 
 ## Usage
 
@@ -28,18 +31,22 @@ Also, your indexes are casted to `int`s.
 
 ### Examples
 
-Here's a simple program that's supposed to be compiled using an array start of 1:
+Here's a simple program that's supposed to be compiled using an array start index of 1:
 
 ```c
 #include <stdio.h>
 
 int main(void) {
   int a[] = { 2, 3, 1 };
-  printf("First element is %d.\n", a[a[3]]);
+  printf("Element is %d.\n", a[a[3]]);
 }
 ```
 
-You can find it in the repo as `test.c1`.
+Output with array start of 1: `Element is 2.`
+
+Output with array start of 2: `Element is 3.`
+
+You can find the file in the repo as `test.c1`.
 
 ---
 
